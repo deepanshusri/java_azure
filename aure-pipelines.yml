@@ -9,5 +9,5 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo 'mvn test -P android-single'
+    echo mvn test -P android-single
   displayName: 'Run a multi-line script'
