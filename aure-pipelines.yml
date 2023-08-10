@@ -13,6 +13,6 @@ steps:
   displayName: 'LambdaTest configuration setup'
   inputs:
 
-- script: ' mvn test -D suite=single.xml '
+- script: 'mvn test -P android-single'
 
  
