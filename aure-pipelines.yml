@@ -2,16 +2,19 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
-
+  vmImage: 'ubuntu-latest'
 
 variables:
-  LT_USERNAME: 'username'
-  LT_ACCESS_KEY: 'accesskey'
-  LT_BUILD_NAME: 'buildName'
+  LT_USERNAME: "user"
+  LT_ACCESS_KEY: "key"
 
-# Maven
 steps:
+- script: |
+    mvn clean install
+  displayName: 'Maven Build'
 
-- task: Maven@3
-- task: LambdatestResults@1
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/target'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
