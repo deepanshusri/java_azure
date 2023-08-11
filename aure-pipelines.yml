@@ -11,6 +11,7 @@ variables:
 steps:
 - script: |
     mvn clean install
+    mvn test -P android-single
   displayName: 'Maven Build'
 
 - task: PublishBuildArtifacts@1
