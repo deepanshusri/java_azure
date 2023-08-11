@@ -27,7 +27,7 @@ public class AndroidApp {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("build","Java TestNG Android");
-            capabilities.setCapability("name",platform+" "+device+" "+version);
+            capabilities.setCapability("name","azure pipeline");
             capabilities.setCapability("deviceName", device);
             capabilities.setCapability("platformVersion",version);
             capabilities.setCapability("platformName", platform);
